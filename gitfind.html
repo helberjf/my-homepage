@@ -1,0 +1,298 @@
+<!-- Save as gitfind.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GitFind — Repositories for helberjf</title>
+
+  <!-- Bootstrap + Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --accent:#0a66c2;
+      --muted:#6b7a90;
+      --card-radius:12px;
+    }
+    body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial; background:#f6f8fb; color:#0b1220; padding-bottom:48px; }
+    .topbar { background:linear-gradient(90deg,#0a3b7a,#062c55); color:#fff; padding:14px 0; }
+    .page { max-width:1100px; margin:20px auto; padding:0 16px; }
+    .repo-card{ border-radius:var(--card-radius); box-shadow:0 8px 22px rgba(9,20,40,0.06); background:#fff; padding:16px; }
+    .repo-meta { color:var(--muted); font-size:0.9rem; }
+    .spinner-container { display:flex; align-items:center; gap:10px; }
+    .small-muted { color:var(--muted); font-size:0.95rem; }
+    .token-input { max-width:520px; }
+    .search-input { max-width:420px; }
+    @media (max-width:576px){ .search-input, .token-input { max-width:100%; } }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container page d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between">
+      <div>
+        <h4 class="mb-0">GitFind</h4>
+        <div class="small-muted">Listing repositories for <strong>helberjf</strong></div>
+      </div>
+
+      <div class="mt-3 mt-md-0 d-flex gap-2 flex-column flex-md-row align-items-stretch">
+        <input id="searchInput" class="form-control search-input" type="search" placeholder="Search repositories (name or description)" aria-label="Search repositories">
+        <input id="tokenInput" class="form-control token-input" type="password" placeholder="Optional: GitHub Personal Access Token (keeps local only)" aria-label="GitHub token">
+        <button id="btnFetch" class="btn btn-light" title="Fetch repositories"><i class="fa-solid fa-download"></i> Fetch</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="d-flex justify-content-between align-items-center mt-4 mb-3">
+      <div>
+        <span id="repoCount" class="small-muted">No repositories loaded</span>
+      </div>
+      <div>
+        <button id="btnClearToken" class="btn btn-outline-secondary btn-sm" title="Clear token">Clear token</button>
+      </div>
+    </div>
+
+    <div id="status" class="mb-3 small-muted"></div>
+
+    <div id="reposGrid" class="row g-3"></div>
+
+    <div id="loadMoreWrap" class="text-center mt-4" style="display:none;">
+      <button id="btnLoadMore" class="btn btn-primary">Load more</button>
+    </div>
+  </main>
+
+  <footer class="page text-center mt-5 small-muted">
+    <div>Built with 💙 • Uses GitHub API — public repos only unless you provide a token</div>
+  </footer>
+
+<script>
+/*
+  gitfind.html
+  - Default username: helberjf
+  - Fetches all pages by following 'Link' header when present.
+  - Optionally accepts a PAT (Personal Access Token) for higher rate limits / private repos.
+  - Search filter client-side.
+*/
+
+const USERNAME = 'helberjf';
+const PER_PAGE = 100; // maximum per GitHub API
+const reposGrid = document.getElementById('reposGrid');
+const repoCountEl = document.getElementById('repoCount');
+const statusEl = document.getElementById('status');
+const searchInput = document.getElementById('searchInput');
+const tokenInput = document.getElementById('tokenInput');
+const btnFetch = document.getElementById('btnFetch');
+const btnClearToken = document.getElementById('btnClearToken');
+const loadMoreWrap = document.getElementById('loadMoreWrap');
+const btnLoadMore = document.getElementById('btnLoadMore');
+
+let repoStore = [];         // all fetched repos
+let displayedCount = 0;     // how many currently displayed
+let nextPageUrl = null;     // for incremental fetch when following Link header
+let fetching = false;
+
+// Initialize token from localStorage if present
+tokenInput.value = localStorage.getItem('gitfind_token') || '';
+
+function authHeaders() {
+  const token = tokenInput.value.trim();
+  if (!token) return { 'Accept': 'application/vnd.github+json' };
+  return { 'Accept': 'application/vnd.github+json', 'Authorization': 'token ' + token };
+}
+
+// Helper: parse Link header
+function parseLinkHeader(header) {
+  if (!header) return {};
+  const parts = header.split(',');
+  const links = {};
+  parts.forEach(p => {
+    const match = p.match(/<([^>]+)>;\\s*rel="([^"]+)"/);
+    if (match) links[match[2]] = match[1];
+  });
+  return links;
+}
+
+// Render functions
+function repoCardHTML(repo) {
+  const desc = repo.description ? escapeHtml(repo.description) : '<span class="text-muted">No description</span>';
+  const lang = repo.language ? `<span class="badge bg-light text-dark">${repo.language}</span>` : '';
+  const stars = repo.stargazers_count ? `<i class="fa-solid fa-star" style="color:#f6b21a"></i> ${repo.stargazers_count}` : '';
+  const updated = new Date(repo.updated_at).toLocaleString();
+  return `
+    <div class="col-12">
+      <div class="repo-card d-flex flex-column flex-md-row gap-3">
+        <div style="flex:1">
+          <h5 style="margin:0">
+            <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">${escapeHtml(repo.name)}</a>
+            ${lang}
+          </h5>
+          <div class="repo-meta mt-1">${desc}</div>
+        </div>
+        <div class="text-md-end" style="min-width:140px;">
+          <div class="small-muted">${stars}</div>
+          <div class="small-muted mt-2">Updated: ${escapeHtml(updated)}</div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderRepos(repos) {
+  if (!repos || repos.length === 0) {
+    if (repoStore.length === 0) {
+      reposGrid.innerHTML = '<div class="col-12"><div class="small-muted">No repositories found.</div></div>';
+      repoCountEl.textContent = '0 repositories';
+    }
+    return;
+  }
+  const html = repos.map(r => repoCardHTML(r)).join('');
+  reposGrid.insertAdjacentHTML('beforeend', html);
+}
+
+// Escape HTML to prevent injection
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+// Fetch flow: we support two modes:
+// 1) fetchAll: follow pagination and fetch everything (used by Fetch button).
+// 2) fetchNextPage: used to load more when Link header suggests next page.
+async function fetchAllRepos() {
+  // reset store + UI
+  repoStore = [];
+  displayedCount = 0;
+  reposGrid.innerHTML = '';
+  repoCountEl.textContent = 'Loading...';
+  statusEl.innerHTML = '';
+
+  const initialUrl = `https://api.github.com/users/${USERNAME}/repos?per_page=${PER_PAGE}&sort=updated`;
+  nextPageUrl = initialUrl;
+  loadMoreWrap.style.display = 'none';
+
+  try {
+    fetching = true;
+    while (nextPageUrl) {
+      statusEl.innerHTML = `<div class="spinner-container"><div class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></div> Fetching page...</div>`;
+      const response = await fetch(nextPageUrl, { headers: authHeaders() });
+      if (response.status === 401 || response.status === 403) {
+        // auth or rate-limit problem
+        const txt = await response.text();
+        statusEl.innerHTML = `<div class="alert alert-warning">GitHub API error: ${response.status}. ${escapeHtml(txt)}</div>`;
+        fetching = false;
+        return;
+      }
+      if (!response.ok) {
+        statusEl.innerHTML = `<div class="alert alert-danger">Failed to fetch repos: ${response.status} ${response.statusText}</div>`;
+        fetching = false;
+        return;
+      }
+      const data = await response.json();
+      repoStore = repoStore.concat(data);
+      // check Link header
+      const link = response.headers.get('Link');
+      const links = parseLinkHeader(link);
+      nextPageUrl = links.next || null;
+      // continue loop until no next
+    }
+
+    // finished fetching all pages
+    statusEl.innerHTML = `<div class="alert alert-success">Fetched ${repoStore.length} repositories.</div>`;
+    repoCountEl.textContent = `${repoStore.length} repositories`;
+    // initial render: show first 20 (for speed). User can search to filter all or we could show all.
+    displayedCount = 0;
+    renderNextChunk(20);
+    // Save token locally if present
+    if (tokenInput.value.trim()) localStorage.setItem('gitfind_token', tokenInput.value.trim());
+    else localStorage.removeItem('gitfind_token');
+
+  } catch (err) {
+    console.error(err);
+    statusEl.innerHTML = `<div class="alert alert-danger">Error fetching repositories: ${escapeHtml(err.message)}</div>`;
+  } finally {
+    fetching = false;
+  }
+}
+
+// Render small chunk and show "Load more" if leftovers
+function renderNextChunk(n = 20) {
+  if (displayedCount >= repoStore.length) {
+    loadMoreWrap.style.display = 'none';
+    return;
+  }
+  const chunk = repoStore.slice(displayedCount, displayedCount + n);
+  renderRepos(chunk);
+  displayedCount += chunk.length;
+  repoCountEl.textContent = `${repoStore.length} repositories — showing ${displayedCount}`;
+  if (displayedCount < repoStore.length) {
+    loadMoreWrap.style.display = 'block';
+    btnLoadMore.textContent = `Load more (${Math.min(repoStore.length - displayedCount, 50)} left)`;
+  } else {
+    loadMoreWrap.style.display = 'none';
+  }
+}
+
+// Client-side search/filter (name + description)
+function applyFilter() {
+  const q = (searchInput.value || '').trim().toLowerCase();
+  reposGrid.innerHTML = '';
+  if (!q) {
+    // show first displayedCount items from repoStore
+    renderRepos(repoStore.slice(0, displayedCount));
+    repoCountEl.textContent = `${repoStore.length} repositories — showing ${displayedCount}`;
+    return;
+  }
+  const filtered = repoStore.filter(r => {
+    return (r.name && r.name.toLowerCase().includes(q)) ||
+           (r.description && r.description.toLowerCase().includes(q));
+  });
+  if (filtered.length === 0) {
+    reposGrid.innerHTML = '<div class="col-12"><div class="small-muted">No matches.</div></div>';
+  } else {
+    renderRepos(filtered);
+  }
+  repoCountEl.textContent = `${filtered.length} repositories matched`;
+}
+
+// Button handlers
+btnFetch.addEventListener('click', async () => {
+  if (fetching) return;
+  await fetchAllRepos();
+});
+
+btnLoadMore.addEventListener('click', () => {
+  renderNextChunk(20);
+});
+
+btnClearToken.addEventListener('click', () => {
+  tokenInput.value = '';
+  localStorage.removeItem('gitfind_token');
+  statusEl.innerHTML = '<div class="small-muted">Token cleared from localStorage.</div>';
+});
+
+// Live search with debounce
+let searchTimeout = null;
+searchInput.addEventListener('input', () => {
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(applyFilter, 220);
+});
+
+// Pre-fetch on page load to show immediate content (optional). Comment out if you prefer manual fetch.
+window.addEventListener('load', () => {
+  // If token present in localStorage, restore to input
+  const saved = localStorage.getItem('gitfind_token');
+  if (saved && !tokenInput.value) tokenInput.value = saved;
+  // Auto-fetch first time:
+  btnFetch.click();
+});
+</script>
+
+</body>
+</html>

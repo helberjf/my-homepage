@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Resume — Helber Soares</title>
+
+  <!-- Elegant, ATS-safe single-column resume (international corporate blue) -->
+  <style>
+    :root{
+      --bg: #fafbff;
+      --panel: #ffffff;
+      --text: #0b1b2b;
+      --muted: #6b7a90;
+      --accent: #0a66c2;      /* corporate blue accent */
+      --link: #0b3d78;        /* darker blue for links in light mode */
+      --hr: #e6eef8;
+      --radius: 10px;
+      --max-width: 850px;
+      --print-margin: 18mm;
+    }
+
+    /* Dark-mode equivalents (uses system preference) */
+    @media (prefers-color-scheme: dark) {
+      :root{
+        --bg: #071226;
+        --panel: #071828;
+        --text: #e6eef8;
+        --muted: #9fb0d6;
+        --accent: #4ea8ff;
+        --link: #cfe8ff;      /* lighter link in dark mode */
+        --hr: rgba(255,255,255,0.06);
+      }
+    }
+
+    /* Page layout */
+    html,body { height:100%; margin:0; background:var(--bg); color:var(--text); font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+    .page { max-width:var(--max-width); margin:28px auto; padding:24px; }
+    .card { background:var(--panel); border-radius:var(--radius); box-shadow:0 10px 30px rgba(9,20,40,0.06); padding:28px; }
+
+    /* Header */
+    header { display:flex; flex-direction:row; gap:18px; align-items:center; margin-bottom:18px; }
+    .head-left { flex:1; }
+    h1 { margin:0; font-size:1.48rem; letter-spacing:0.2px; }
+    .role { margin-top:6px; color:var(--muted); font-size:0.96rem; }
+    .contact { margin-top:10px; font-size:0.95rem; color:var(--muted); }
+    .contact a { color:var(--link); text-decoration:none; font-weight:600; }
+    .contact a:hover { text-decoration:underline; }
+
+    /* decorative badge (non-semantic, hidden to AT S via aria-hidden) */
+    .badge { display:inline-block; padding:8px 12px; border-radius:8px; background:linear-gradient(180deg, rgba(10,102,194,0.12), rgba(10,102,194,0.02)); color:var(--accent); font-weight:700; font-size:0.95rem; }
+
+    hr.sep { border:none; height:1px; background:var(--hr); margin:20px 0; border-radius:2px; }
+
+    /* Sections */
+    section { margin-top:14px; }
+    h2 { margin:0 0 10px 0; font-size:1.02rem; color:var(--text); }
+    p.lead { margin:0; color:var(--muted); line-height:1.5; }
+
+    /* Lists */
+    ul.clean { padding-left:18px; margin:8px 0 0 0; }
+    ul.clean li { margin:8px 0; line-height:1.45; }
+
+    /* Skills (kept linear and text-based for ATS) */
+    .skills p { margin:6px 0; color:var(--muted); font-size:0.95rem; }
+
+    /* meta small text */
+    .meta { font-size:0.92rem; color:var(--muted); margin-bottom:8px; }
+
+    /* Back to Home button (semantic link styled as button) */
+    .back-home {
+      display:inline-block;
+      margin-top:28px;
+      padding:10px 16px;
+      background:var(--accent);
+      color:#fff;
+      border-radius:8px;
+      font-size:0.95rem;
+      text-decoration:none;
+      box-shadow:0 6px 18px rgba(10,102,194,0.12);
+      transition:transform .12s ease, opacity .12s ease;
+    }
+    .back-home:hover { transform:translateY(-3px); opacity:0.95; }
+
+    /* Actions links */
+    .actions { margin-top:14px; }
+    .btn { display:inline-block; padding:8px 12px; border-radius:8px; background:transparent; border:1px solid var(--accent); color:var(--accent); font-weight:600; text-decoration:none; margin-right:8px; }
+    .btn.primary { background:var(--accent); color:#fff; border-color:var(--accent); }
+
+    /* Print */
+    @media print {
+      body { background:#fff; color:#000; }
+      .page { box-shadow:none; margin:0; padding:0; }
+      .card { box-shadow:none; padding:0; border-radius:0; }
+      .actions, .back-home { display:none; }
+      @page { margin: var(--print-margin); }
+    }
+
+    /* Responsive */
+    @media (max-width:720px) {
+      header { flex-direction:column; align-items:flex-start; gap:12px; }
+      .badge { align-self:flex-end; }
+      .contact { font-size:0.95rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="card" role="document" aria-label="Resume of Helber Soares">
+
+      <!-- Header -->
+      <header>
+        <div class="head-left">
+          <h1>Helber Soares</h1>
+          <div class="role">Full Stack Developer — React &amp; TypeScript | AI Specialist</div>
+
+          <div class="contact" aria-label="Contact information">
+            Rio de Janeiro, Brazil • Email: <a href="mailto:helberjf@gmail.com">helberjf@gmail.com</a> • Phone: <a href="tel:+5532991949689">+55 32 99194-9689</a>
+            <br />
+            GitHub: <a href="https://github.com/helberjf" target="_blank" rel="noopener noreferrer">github.com/helberjf</a> • LinkedIn: <a href="https://www.linkedin.com/in/helber-soares-6a77291b0/" target="_blank" rel="noopener noreferrer">linkedin.com/in/helber-soares-6a77291b0</a>
+          </div>
+        </div>
+
+        <!-- Visual accent (non-essential to ATS) -->
+        <div aria-hidden="true" style="min-width:96px;text-align:right">
+          <div class="badge">React + TS</div>
+        </div>
+      </header>
+
+      <hr class="sep" />
+
+      <!-- Summary -->
+      <section aria-labelledby="summary">
+        <h2 id="summary">Professional Summary</h2>
+        <p class="lead">
+          Full Stack Developer (TypeScript, React, Node.js) with a postgraduate specialization in Artificial Intelligence (FGV).
+          Experienced building production-ready frontends and scalable backends, integrating local LLM automations and containerized pipelines (Docker).
+          Former military officer with 14 years of leadership in mission-critical operations — bringing operational discipline, systems thinking and ownership to software delivery.
+        </p>
+      </section>
+
+      <!-- Skills -->
+      <section aria-labelledby="skills">
+        <h2 id="skills">Core Skills</h2>
+        <div class="skills" aria-hidden="false">
+          <p><strong>Languages &amp; Frameworks:</strong> TypeScript, JavaScript, Python, React, Node.js, Express</p>
+          <p><strong>Databases:</strong> PostgreSQL, MongoDB, Redis</p>
+          <p><strong>DevOps &amp; Tools:</strong> Docker, CI/CD, N8N, Git, GitHub Actions</p>
+          <p><strong>AI / ML:</strong> LLM integration (Ollama), NLP basics, model orchestration and pipelines</p>
+          <p><strong>Practices:</strong> API design, responsive UI, accessibility, performance optimization</p>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section aria-labelledby="experience">
+        <h2 id="experience">Experience</h2>
+
+        <div>
+          <strong>Officer — Brazilian Navy</strong><br />
+          <span class="meta">2011 — 2025</span>
+
+          <ul class="clean" aria-label="Officer responsibilities">
+            <li>Led multidisciplinary teams in mission-critical operations, ensuring reliable execution under strict time and safety constraints — directly relevant to production system reliability and on-call practices.</li>
+            <li>Designed and improved operational workflows using KPIs, resource planning and continuous improvement — applied to backlog prioritization, delivery planning and scalable architecture decisions.</li>
+            <li>Demonstrated rapid problem-solving and ownership during incidents and complex operations — transferable to debugging, incident response and system reliability engineering.</li>
+            <li>Coordinated multinational and cross-agency operations, formalizing communication and documentation — valuable for cross-team API integrations and stakeholder alignment.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section aria-labelledby="projects">
+        <h2 id="projects">Selected Projects</h2>
+        <ul class="clean">
+          <li><strong>Local LLM WhatsApp Automation</strong> — end-to-end automation using Ollama (local LLM), N8N orchestration, Docker and Redis to provide message handling without external token costs.</li>
+          <li><strong>Full Stack Web App</strong> — React + TypeScript front-end with Node.js/Express API and PostgreSQL, including authentication, validation and deployment pipeline.</li>
+          <li><strong>Marketplace Payment Integration</strong> — custom checkout and billing module integration with Mercado Pago (Node.js backend).</li>
+          <li><strong>Data prototype: crime clustering</strong> — exploratory analysis and DBSCAN clustering to support operational decision-making.</li>
+        </ul>
+      </section>
+
+      <!-- Education & Certifications -->
+      <section aria-labelledby="education">
+        <h2 id="education">Education & Certifications</h2>
+        <ul class="clean">
+          <li><strong>Postgraduate Specialization — Artificial Intelligence</strong>, FGV (2024)</li>
+          <li>CS50x — Harvard University</li>
+          <li>JavaScript Developer — DIO</li>
+          <li>Check-Out Pro Certification — Passed the exam for custom checkout & billing module implementation (Mercado Pago)</li>
+        </ul>
+      </section>
+
+      <!-- Closing / Availability -->
+      <section aria-labelledby="closing">
+        <h2 id="closing">Availability</h2>
+        <p class="lead">Open to Frontend (React + TypeScript) and Full Stack roles. Available for remote or relocation. Contact: <a href="mailto:helberjf@gmail.com">helberjf@gmail.com</a> • +55 32 99194-9689</p>
+
+        <div class="actions" aria-hidden="true">
+          <a class="btn primary" href="mailto:helberjf@gmail.com" title="Email">Email</a>
+          <a class="btn" href="https://github.com/helberjf" target="_blank" rel="noopener noreferrer" title="GitHub">GitHub</a>
+        </div>
+      </section>
+
+      <!-- Back to home (visible button that navigates to index.html) -->
+      <a class="back-home" href="index.html" title="Back to home">← Back to Home</a>
+
+    </div>
+  </div>
+</body>
+</html>
