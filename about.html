@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About — Helber Soares</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar (same as index) -->
+  <nav class="navbar navbar-expand-lg navbar-dark" id="mainNavbar" style="background: linear-gradient(90deg,#0a3b7a,#062c55);">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Helber Soares</a>
+      <div class="d-flex align-items-center me-2">
+        <div class="form-check form-switch text-nowrap mb-0">
+          <input class="form-check-input" type="checkbox" id="themeToggle" aria-label="Toggle dark mode">
+          <label class="form-check-label small ms-2 text-light" for="themeToggle">Dark</label>
+        </div>
+      </div>
+      <button class="navbar-toggler ms-1" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="hobbies.html">Hobbies</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+          <li class="nav-item ms-2"><a class="nav-link" href="https://wa.me/5532991949689" target="_blank"><i class="fa-brands fa-whatsapp" style="color:#25D366"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-5" id="about">
+    <div class="row g-4 align-items-start">
+      <div class="col-md-3 text-center">
+        <img src="https://avatars.githubusercontent.com/u/139668970?v=4" alt="Helber Soares" class="avatar mb-3">
+      </div>
+
+      <div class="col-md-9">
+        <h1>Helber — Full Stack Developer & AI Specialist</h1>
+        <p class="lead">Full Stack developer (TypeScript, Node, React) with a postgraduate degree in Artificial Intelligence (FGV). I deliver reliable, scalable software: modern front-ends (React + TypeScript), robust APIs and LLM-driven automations running in containerized infrastructure.</p>
+
+        <div class="mt-3">
+          <h5 class="section-title">One-line summary</h5>
+          <p>Build modern React + TypeScript applications connected to reliable backends, focusing on product quality, performance and accessibility.</p>
+        </div>
+
+        <hr class="sep">
+
+        <div class="row">
+          <div class="col-md-7">
+            <h5 class="section-title">Impact & projects</h5>
+            <ul>
+              <li><strong>Automation:</strong> Local LLM + N8N + Docker for WhatsApp automation (<code>n8n-docker-ollama-waha_api</code>).</li>
+              <li><strong>APIs:</strong> REST services built with tests and docs (<code>api-project-pokemonApi</code>).</li>
+              <li><strong>Infra:</strong> containerization and CI/CD practices (<code>Docker-Imersion-DevOps-Alura-Google-Cloud</code>).</li>
+              <li><strong>Data:</strong> prototypes and clustering for operational insights (<code>sao-paulo-crime-dbscan</code>).</li>
+            </ul>
+          </div>
+          <div class="col-md-5">
+            <h5 class="section-title">Core skills</h5>
+            <p><strong>Front:</strong> React, TypeScript, HTML/CSS</p>
+            <p><strong>Back:</strong> Node.js, Express, Python</p>
+            <p><strong>Infra:</strong> Docker, Redis, PostgreSQL, MongoDB, CI/CD</p>
+            <p><strong>AI:</strong> Local LLMs (Ollama), ML pipelines</p>
+            <p><strong>Contact:</strong> <a href="mailto:helberjf@gmail.com">helberjf@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="mt-3">
+          <a class="btn btn-primary me-2" href="resume.html"><i class="fa-regular fa-file fa-fw"></i> View resume</a>
+          <a class="btn btn-outline-primary" href="https://github.com/helberjf" target="_blank"><i class="fa-brands fa-github fa-fw"></i> GitHub</a>
+        </div>
+
+        <!-- Experiences block (full text provided by user, formatted) -->
+        <div class="card mt-4">
+          <h4 class="section-title">Experiences</h4>
+          <p><strong>Hello —</strong> I am Helber. Born in Juiz de Fora-MG and currently living in Rio de Janeiro. Graduated from Escola Naval. I am 31 and transitioning into programming because the field constantly rewards learning and growth. I have travelled to 29 countries and have international contacts.</p>
+          <p>In 2024 I completed a postgraduate degree in Artificial Intelligence at FGV via the Brazilian Navy, where I served for 14 years and ended my military career as a First Lieutenant in the Marine Corps. I commanded platoons and a company with over 400 personnel, operated in complex urban and environmental missions, and performed night navigation of large ships in the Amazon. I also spent a month as a Liaison Officer with the US Marines.</p>
+          <p>I completed advanced amphibious warfare and Marine Corps training courses. I passed English and Spanish proficiency exams and I am a beginner in French. I chose programming for its future prospects, constant learning and ability to create impactful solutions. My background brings discipline, leadership and decision-making under pressure to software delivery.</p>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center text-muted py-4">© 2025 Helber Soares</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>
