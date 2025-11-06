@@ -9,27 +9,22 @@
   <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark" id="mainNavbar" style="background: linear-gradient(90deg,#0a3b7a,#062c55);">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">Helber Soares</a>
-      <div class="d-flex align-items-center me-2">
-        <div class="form-check form-switch text-nowrap mb-0">
-          <input class="form-check-input" type="checkbox" id="themeToggle" aria-label="Toggle dark mode">
-          <label class="form-check-label small ms-2 text-light" for="themeToggle">Dark</label>
-        </div>
-      </div>
-      <button class="navbar-toggler ms-1" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto align-items-center">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link active" href="hobbies.html">Hobbies</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item ms-2"><a class="nav-link" href="https://wa.me/5532991949689" target="_blank"><i class="fa-brands fa-whatsapp" style="color:#25D366"></i></a></li>
-        </ul>
+  <!-- Top menu without toggle -->
+  <nav class="navbar-fixed-top">
+    <div class="sitebar container">
+      <a class="brand" href="index.html">Helber Soares</a>
+
+      <div class="nav-items" role="navigation" aria-label="Main menu">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="hobbies.html">Hobbies</a>
+        <a class="nav-link" href="gitfind.html">GitFind</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+        <a class="nav-link" href="resume.html">Resume</a>
+
+        <!-- Icons -->
+        <a class="nav-icon" href="https://github.com/helberjf" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a class="nav-icon" href="https://wa.me/5532991949689" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
       </div>
     </div>
   </nav>

@@ -1,9 +1,0 @@
-10 HTML tags usadas (lista):
-nav, header, main, section, article, h1, h2, p, ul, li, a, img, form, input, textarea, button, footer, figure, figcaption
-
-5 CSS propriedades usadas (lista):
-background-color, padding, max-width, border-radius, box-shadow, color, font-size
-
-Descrição curta (JS e Bootstrap):
-- Bootstrap 5: usado para layout responsivo, navbar, grid, cards e componentes prontos.
-- JavaScript: validação simples do formulário com feedback ao usuário e pequenos efeitos (sombra no navbar).
