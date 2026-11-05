@@ -4,3 +4,9 @@ dist/
 .env.*
 !.env.example
 *.log
+
+# Local AI assistant files
+.claude/
+.openclaw/
+.superpowers/
+docs/superpowers/
