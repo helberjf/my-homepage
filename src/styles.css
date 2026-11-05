@@ -165,11 +165,6 @@ main {
   overflow-wrap: break-word;
 }
 
-.availability {
-  font-weight: 800;
-  color: var(--accent-strong);
-}
-
 .hero-actions,
 .contact-actions {
   display: flex;

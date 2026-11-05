@@ -18,7 +18,6 @@ export function HomePage() {
           <h1>Helber Soares</h1>
           <p className="hero-role">{hero.role}</p>
           <p className="hero-summary">{hero.summary}</p>
-          <p className="availability">{hero.availability}</p>
           <div className="hero-actions">
             <IconLink href="/resume" icon={<FileText aria-hidden="true" size={18} />} variant="primary">
               {language === "en" ? "View Resume" : "Ver currículo"}

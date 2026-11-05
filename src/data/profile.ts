@@ -8,7 +8,6 @@ type Link = {
 type Hero = {
   role: string;
   summary: string;
-  availability: string;
 };
 
 type StackGroup = {
@@ -106,10 +105,6 @@ const englishResumeSections: ResumeSection[] = [
   {
     title: "Languages",
     items: ["English: advanced/fluent.", "Spanish: intermediate.", "French: beginner."]
-  },
-  {
-    title: "Availability",
-    items: ["Open to Frontend, Full Stack and AI-enabled product roles. Available for remote, hybrid or relocation opportunities."]
   }
 ];
 
@@ -168,10 +163,6 @@ const portugueseResumeSections: ResumeSection[] = [
   {
     title: "Idiomas",
     items: ["Inglês: avançado/fluente.", "Espanhol: intermediário.", "Francês: iniciante."]
-  },
-  {
-    title: "Disponibilidade",
-    items: ["Aberto a vagas Frontend, Full Stack e produtos com IA. Disponível para oportunidades remotas, híbridas ou com relocação."]
   }
 ];
 
@@ -190,14 +181,12 @@ export const profile: Profile = {
     en: {
       role: "Full Stack Developer | Next.js, TypeScript, React, Node.js, Python | AI & LLM applications",
       summary:
-        "I build production-ready web products from database design to deployment, with strong evidence in Next.js, TypeScript, React, Node.js, Python/FastAPI and practical AI features using LLMs.",
-      availability: "Open to Frontend, Full Stack and AI-enabled product roles."
+        "I build production-ready web products from database design to deployment, with strong evidence in Next.js, TypeScript, React, Node.js, Python/FastAPI and practical AI features using LLMs."
     },
     pt: {
       role: "Desenvolvedor Full Stack | Next.js, TypeScript, React, Node.js, Python | Aplicações com IA e LLMs",
       summary:
-        "Construo produtos web prontos para produção da modelagem do banco ao deploy, com experiência em Next.js, TypeScript, React, Node.js, Python/FastAPI e recursos práticos de IA com LLMs.",
-      availability: "Aberto a vagas Frontend, Full Stack e produtos com IA."
+        "Construo produtos web prontos para produção da modelagem do banco ao deploy, com experiência em Next.js, TypeScript, React, Node.js, Python/FastAPI e recursos práticos de IA com LLMs."
     }
   },
   credentials: {

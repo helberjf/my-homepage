@@ -19,8 +19,7 @@ describe("portfolio content", () => {
       "Selected Projects",
       "Education",
       "Certifications",
-      "Languages",
-      "Availability"
+      "Languages"
     ]);
   });
 
