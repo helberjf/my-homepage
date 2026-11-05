@@ -2,7 +2,7 @@ import { profile } from "../data/profile";
 import { projects } from "../data/projects";
 
 describe("portfolio content", () => {
-  it("is English-first and includes the strongest recruiter signals", () => {
+  it("is English-first and includes the strongest profile signals", () => {
     expect(profile.defaultLanguage).toBe("en");
     expect(profile.hero.en.role).toContain("Full Stack Developer");
     expect(profile.hero.en.summary).toContain("Next.js");
@@ -11,7 +11,7 @@ describe("portfolio content", () => {
     expect(profile.credentials.en.join(" ")).toContain("Brazilian Navy");
   });
 
-  it("keeps a separate ATS resume model", () => {
+  it("keeps a separate plain resume model", () => {
     expect(profile.resume.en.sections.map((section) => section.title)).toEqual([
       "Professional Summary",
       "Core Skills",
@@ -28,7 +28,7 @@ describe("portfolio content", () => {
     expect(names).toContain("E-commerce & Services Platform");
     expect(names).toContain("Gym Management Platform");
     expect(names).toContain("AI Tutor for Kids");
-    expect(names).toContain("AI Media Transcription & Report Studio");
+    expect(names).toContain("AWS Serverless Orders");
     expect(names).toContain("Agenda Productivity App");
     expect(names).toContain("Logs Microservice");
   });

@@ -54,57 +54,61 @@ const englishResumeSections: ResumeSection[] = [
   {
     title: "Professional Summary",
     items: [
-      "Full Stack Developer focused on production-ready web applications with Next.js, React, TypeScript, Node.js and Python/FastAPI.",
-      "Builds complete products from database modeling to deployment, with practical AI/LLM features using Gemini, OpenAI, Whisper, Ollama and local models.",
-      "Former Brazilian Navy officer with leadership experience in high-pressure operations, bringing ownership, discipline and clear communication to software delivery."
+      "Full Stack Developer building web applications with TypeScript, React, Next.js, Node.js and Python/FastAPI, from data modeling to deployment.",
+      "Builds event-driven backends on AWS (Lambda, API Gateway, DynamoDB Streams, SQS, EventBridge, AWS SAM) and practical AI/LLM features.",
+      "Brazilian Navy officer with leadership experience in high-pressure operations, bringing ownership, discipline and clear communication to software delivery."
     ]
   },
   {
     title: "Core Skills",
     items: [
-      "Frontend: Next.js, React, TypeScript, Tailwind CSS, shadcn/ui, responsive UI, accessibility.",
-      "Backend: Node.js, Express, FastAPI, REST APIs, Auth.js/NextAuth, JWT, OAuth, RBAC.",
-      "Data: PostgreSQL, Prisma, Drizzle, Firebase Realtime Database, Redis, SQLModel, SQLAlchemy.",
-      "AI/ML: Gemini, OpenAI, Whisper, Ollama, YOLOv10, PyTorch, scikit-learn, Pandas, NumPy.",
-      "Infrastructure and quality: Docker, Vercel, Cloudflare R2, GitHub Actions, Vitest, Playwright, pytest, OpenAPI."
+      "Frontend: React, Next.js, TypeScript, Tailwind CSS, responsive and accessible UI.",
+      "Backend: Node.js, Express, FastAPI, REST APIs, authentication and RBAC.",
+      "Data: PostgreSQL, Prisma, Drizzle, Redis, DynamoDB.",
+      "Cloud and delivery: AWS Lambda, API Gateway, SQS, EventBridge, AWS SAM, Docker, Vercel, GitHub Actions.",
+      "Testing: Vitest, Playwright, pytest.",
+      "AI: Gemini and OpenAI integrations, PyTorch, scikit-learn."
     ]
   },
   {
     title: "Experience",
     items: [
-      "Brazilian Navy, First Lieutenant Marine Corps Officer, February 2011 to present, Rio de Janeiro, Brazil.",
-      "Led and coordinated teams in high-responsibility environments, translating operational discipline, planning and decision-making under pressure into software delivery habits.",
-      "Completed 300+ hours specialization in Artificial Intelligence for Military Applications through the Brazilian Navy and FGV, with practice in machine learning, data engineering, computer vision and Python."
+      "Full Stack Developer, Independent projects, 2025 to present.",
+      "Máquina Team (fight club): website with Mercado Pago checkout, then a management platform with memberships, store, CRM, WhatsApp and Web Push messaging and role-based dashboards (Next.js, Prisma, PostgreSQL, Redis).",
+      "Mapa Hóspede: lead developer of a platform where accommodation hosts publish digital guest guides (React, TypeScript, Express, PostgreSQL/Drizzle, Stripe).",
+      "Norwell Brasil and DPI Planning Center: multilingual and quote-request websites built with React and TypeScript, with SEO, accessibility checks and Playwright tests.",
+      "Brazilian Navy, Marine Corps Officer (First Lieutenant), February 2011 to present, Rio de Janeiro, Brazil. Includes officer training at the Brazilian Naval Academy (2014 to 2019).",
+      "Lead and coordinate teams in high-responsibility operations: planning, briefing and executing under time pressure.",
+      "Completed a 300+ hour specialization in Artificial Intelligence for Military Applications (Brazilian Navy / FGV): machine learning, data engineering, computer vision and Python."
     ]
   },
   {
     title: "Selected Projects",
     items: [
-      "E-commerce & Services Platform: Next.js 16, React 19, TypeScript, Prisma 7, PostgreSQL/Supabase, 40+ REST endpoints, MercadoPago/Pix, HMAC webhooks, RBAC and Gemini AI assistant.",
-      "Gym Management Platform: real client product for a fight club with plans, store, CRM, WhatsApp, Web Push, dashboards, financial reports, Redis, Cloudflare R2, Vitest and Playwright.",
-      "AI Tutor for Kids: Next.js + FastAPI app with Gemini lesson generation, local TTS, spaced repetition, auth, validation of AI-generated content and Cloudflare Tunnel backend routing.",
-      "AI Media Transcription & Report Studio: Next.js SaaS + FastAPI + Electron with multi-provider transcription, local Whisper fallback, OCR, DOCX/PDF export, billing and email.",
-      "Logs Microservice: Express 5, BullMQ/Redis worker, PostgreSQL, idempotency, dead-letter tracking, Prometheus metrics, OpenAPI, Docker and CI."
+      "AWS Serverless Orders: event-driven TypeScript backend with Lambda, API Gateway, Cognito, DynamoDB Streams, SQS, EventBridge and SNS; transactional outbox, idempotent consumers, DLQs, AWS SAM and 137 automated tests.",
+      "E-commerce & Services Platform: Next.js 16, React 19, TypeScript, Prisma 7, PostgreSQL, 40+ REST endpoints, MercadoPago/Pix, HMAC-verified webhooks, RBAC and a Gemini assistant.",
+      "Logs Microservice: Express 5, BullMQ/Redis worker, PostgreSQL, ingestion deduplication, dead-letter tracking, Prometheus metrics, OpenAPI and Docker.",
+      "AI Tutor: Next.js + FastAPI study platform with AI-generated lessons, spaced repetition, authentication and Playwright end-to-end tests."
     ]
   },
   {
     title: "Education",
     items: [
-      "FGV - Postgraduate Specialization in Artificial Intelligence, January 2024 to April 2025. Final project: YOLOv10-powered computer vision system for military vehicle detection and classification.",
-      "Escola Naval - Naval Sciences / Engineering, January 2014 to December 2019."
+      "FGV, Postgraduate Specialization in Artificial Intelligence, January 2024 to April 2025. Final project: YOLOv10-based computer vision system for military vehicle detection and classification.",
+      "Brazilian Naval Academy (Escola Naval), Bachelor's degree in Naval Science (Mechanical Engineering track), January 2014 to December 2019."
     ]
   },
   {
     title: "Certifications",
     items: [
-      "React Developer - DIO, issued May 2023.",
-      "CS50x Introduction to Computer Science - Harvard University, issued November 2025.",
-      "Mercado Pago checkout and billing module implementation credential."
+      "CS50x Introduction to Computer Science, Harvard University, November 2025.",
+      "React Developer (May 2023) and JavaScript Developer (October 2025), DIO.",
+      "Mercado Pago Checkout Pro developer credential, November 2025."
     ]
   },
   {
     title: "Languages",
-    items: ["English: advanced/fluent.", "Spanish: intermediate.", "French: beginner."]
+    items: ["Portuguese: native.", "English: advanced.", "Spanish: intermediate.", "French: beginner."]
   }
 ];
 
@@ -112,57 +116,61 @@ const portugueseResumeSections: ResumeSection[] = [
   {
     title: "Resumo Profissional",
     items: [
-      "Desenvolvedor Full Stack focado em aplicações web de produção com Next.js, React, TypeScript, Node.js e Python/FastAPI.",
-      "Constrói produtos completos da modelagem de dados ao deploy, com recursos práticos de IA/LLMs usando Gemini, OpenAI, Whisper, Ollama e modelos locais.",
-      "Oficial da Marinha do Brasil, trazendo liderança, disciplina, comunicação clara e tomada de decisão sob pressão para entrega de software."
+      "Desenvolvedor Full Stack que constrói aplicações web com TypeScript, React, Next.js, Node.js e Python/FastAPI, da modelagem de dados ao deploy.",
+      "Desenvolve backends orientados a eventos na AWS (Lambda, API Gateway, DynamoDB Streams, SQS, EventBridge, AWS SAM) e recursos práticos de IA/LLMs.",
+      "Oficial da Marinha do Brasil, com experiência de liderança em operações sob pressão, trazendo responsabilidade, disciplina e comunicação clara para a entrega de software."
     ]
   },
   {
     title: "Competências Principais",
     items: [
-      "Frontend: Next.js, React, TypeScript, Tailwind CSS, shadcn/ui, UI responsiva, acessibilidade.",
-      "Backend: Node.js, Express, FastAPI, APIs REST, Auth.js/NextAuth, JWT, OAuth, RBAC.",
-      "Dados: PostgreSQL, Prisma, Drizzle, Firebase Realtime Database, Redis, SQLModel, SQLAlchemy.",
-      "IA/ML: Gemini, OpenAI, Whisper, Ollama, YOLOv10, PyTorch, scikit-learn, Pandas, NumPy.",
-      "Infraestrutura e qualidade: Docker, Vercel, Cloudflare R2, GitHub Actions, Vitest, Playwright, pytest, OpenAPI."
+      "Frontend: React, Next.js, TypeScript, Tailwind CSS, interfaces responsivas e acessíveis.",
+      "Backend: Node.js, Express, FastAPI, APIs REST, autenticação e RBAC.",
+      "Dados: PostgreSQL, Prisma, Drizzle, Redis, DynamoDB.",
+      "Cloud e entrega: AWS Lambda, API Gateway, SQS, EventBridge, AWS SAM, Docker, Vercel, GitHub Actions.",
+      "Testes: Vitest, Playwright, pytest.",
+      "IA: integrações com Gemini e OpenAI, PyTorch, scikit-learn."
     ]
   },
   {
     title: "Experiência",
     items: [
-      "Marinha do Brasil, Primeiro-Tenente Fuzileiro Naval, fevereiro de 2011 ate o momento, Rio de Janeiro, Brasil.",
-      "Liderou e coordenou equipes em ambientes de alta responsabilidade, aplicando disciplina operacional, planejamento e decisão sob pressão ao desenvolvimento de software.",
-      "Concluiu especialização de mais de 300 horas em Inteligência Artificial para Aplicações Militares pela Marinha do Brasil e FGV, com prática em machine learning, engenharia de dados, visão computacional e Python."
+      "Desenvolvedor Full Stack, Projetos independentes, 2025 até o momento.",
+      "Máquina Team (academia de luta): site com checkout Mercado Pago e, depois, plataforma de gestão com planos, loja, CRM, mensagens por WhatsApp e Web Push e painéis por perfil (Next.js, Prisma, PostgreSQL, Redis).",
+      "Mapa Hóspede: desenvolvedor principal de uma plataforma em que anfitriões publicam guias digitais para hóspedes (React, TypeScript, Express, PostgreSQL/Drizzle, Stripe).",
+      "Norwell Brasil e DPI Planning Center: sites multilíngues e de pedido de orçamento com React e TypeScript, SEO, verificações de acessibilidade e testes Playwright.",
+      "Marinha do Brasil, Oficial Fuzileiro Naval (Primeiro-Tenente), fevereiro de 2011 até o momento, Rio de Janeiro, Brasil. Inclui a formação de oficial na Escola Naval (2014 a 2019).",
+      "Lidera e coordena equipes em operações de alta responsabilidade: planejamento, briefing e execução sob pressão de tempo.",
+      "Concluiu especialização de mais de 300 horas em Inteligência Artificial para Aplicações Militares (Marinha do Brasil / FGV): machine learning, engenharia de dados, visão computacional e Python."
     ]
   },
   {
     title: "Projetos Selecionados",
     items: [
-      "E-commerce & Services Platform: Next.js 16, React 19, TypeScript, Prisma 7, PostgreSQL/Supabase, 40+ endpoints REST, MercadoPago/Pix, webhooks HMAC, RBAC e assistente Gemini.",
-      "Gym Management Platform: produto para cliente real de academia de luta com planos, loja, CRM, WhatsApp, Web Push, dashboards, relatórios financeiros, Redis, Cloudflare R2, Vitest e Playwright.",
-      "AI Tutor for Kids: app Next.js + FastAPI com geração de aulas via Gemini, TTS local, repetição espaçada, autenticação, validação de conteúdo gerado por IA e backend via Cloudflare Tunnel.",
-      "AI Media Transcription & Report Studio: SaaS Next.js + FastAPI + Electron com transcrição multi-provider, fallback Whisper local, OCR, exportação DOCX/PDF, billing e email.",
-      "Logs Microservice: Express 5, worker BullMQ/Redis, PostgreSQL, idempotência, dead letters, métricas Prometheus, OpenAPI, Docker e CI."
+      "AWS Serverless Orders: backend TypeScript orientado a eventos com Lambda, API Gateway, Cognito, DynamoDB Streams, SQS, EventBridge e SNS; transactional outbox, consumidores idempotentes, DLQs, AWS SAM e 137 testes automatizados.",
+      "E-commerce & Services Platform: Next.js 16, React 19, TypeScript, Prisma 7, PostgreSQL, 40+ endpoints REST, MercadoPago/Pix, webhooks verificados com HMAC, RBAC e assistente Gemini.",
+      "Logs Microservice: Express 5, worker BullMQ/Redis, PostgreSQL, deduplicação na ingestão, registro de dead letters, métricas Prometheus, OpenAPI e Docker.",
+      "AI Tutor: plataforma de estudos Next.js + FastAPI com aulas geradas por IA, repetição espaçada, autenticação e testes end-to-end com Playwright."
     ]
   },
   {
     title: "Formação",
     items: [
-      "FGV - Pós-graduação Lato Sensu em Inteligência Artificial, janeiro de 2024 a abril de 2025. Projeto final: sistema de visão computacional com YOLOv10 para detecção e classificação de veículos militares.",
-      "Escola Naval - Ciências Navais / Engenharia, janeiro de 2014 a dezembro de 2019."
+      "FGV, Pós-graduação Lato Sensu em Inteligência Artificial, janeiro de 2024 a abril de 2025. Projeto final: sistema de visão computacional com YOLOv10 para detecção e classificação de veículos militares.",
+      "Escola Naval, Bacharelado em Ciências Navais (habilitação em Mecânica), janeiro de 2014 a dezembro de 2019."
     ]
   },
   {
     title: "Certificações",
     items: [
-      "React Developer - DIO, emitida em maio de 2023.",
-      "CS50x Introduction to Computer Science - Harvard University, emitida em novembro de 2025.",
-      "Credencial de implementação de checkout e módulo de cobrança Mercado Pago."
+      "CS50x Introduction to Computer Science, Harvard University, novembro de 2025.",
+      "React Developer (maio de 2023) e JavaScript Developer (outubro de 2025), DIO.",
+      "Credencial de desenvolvedor Mercado Pago Checkout Pro, novembro de 2025."
     ]
   },
   {
     title: "Idiomas",
-    items: ["Inglês: avançado/fluente.", "Espanhol: intermediário.", "Francês: iniciante."]
+    items: ["Português: nativo.", "Inglês: avançado.", "Espanhol: intermediário.", "Francês: iniciante."]
   }
 ];
 
@@ -179,109 +187,111 @@ export const profile: Profile = {
   },
   hero: {
     en: {
-      role: "Full Stack Developer | Next.js, TypeScript, React, Node.js, Python | AI & LLM applications",
+      role: "Full Stack Developer | TypeScript, React, Node.js & Next.js | AWS Serverless & PostgreSQL",
       summary:
-        "I build production-ready web products from database design to deployment, with strong evidence in Next.js, TypeScript, React, Node.js, Python/FastAPI and practical AI features using LLMs."
+        "I build full stack web applications with TypeScript, React, Next.js and Node.js, from the database schema to the deployed app, including event-driven backends on AWS and practical AI features."
     },
     pt: {
-      role: "Desenvolvedor Full Stack | Next.js, TypeScript, React, Node.js, Python | Aplicações com IA e LLMs",
+      role: "Desenvolvedor Full Stack | TypeScript, React, Node.js e Next.js | AWS Serverless e PostgreSQL",
       summary:
-        "Construo produtos web prontos para produção da modelagem do banco ao deploy, com experiência em Next.js, TypeScript, React, Node.js, Python/FastAPI e recursos práticos de IA com LLMs."
+        "Desenvolvo aplicações web full stack com TypeScript, React, Next.js e Node.js, do modelo de dados ao deploy, incluindo backends orientados a eventos na AWS e recursos práticos de IA."
     }
   },
   credentials: {
     en: [
       "Postgraduate specialization in Artificial Intelligence at FGV",
-      "Brazilian Navy officer background with leadership under pressure",
-      "Real client platform delivered for Máquina Team",
-      "40+ REST endpoints, RBAC, payments, webhooks and AI workflows"
+      "Brazilian Navy officer with leadership experience under pressure",
+      "Management platform built for Máquina Team, a fight club",
+      "Event-driven AWS backend with transactional outbox and idempotent consumers"
     ],
     pt: [
       "Pós-graduação em Inteligência Artificial pela FGV",
-      "Experiência como Oficial da Marinha do Brasil com liderança sob pressão",
-      "Plataforma entregue para cliente real: Máquina Team",
-      "40+ endpoints REST, RBAC, pagamentos, webhooks e fluxos com IA"
+      "Oficial da Marinha do Brasil, com experiência de liderança sob pressão",
+      "Plataforma de gestão feita para a Máquina Team, academia de luta",
+      "Backend orientado a eventos na AWS com transactional outbox e consumidores idempotentes"
     ]
   },
   recruiterSummary: {
     en: [
-      "Helber is positioned for teams that need someone who can build more than interfaces: he connects product requirements, backend rules, databases, integrations, deployment and user experience.",
-      "His strongest portfolio evidence is not a list of tutorials. It includes a private e-commerce/services platform documented as a public architecture case study, a real client gym management system, an AI tutor, an AI transcription/reporting studio, a productivity app and an observability microservice.",
-      "The technical pattern is consistent: TypeScript-first web apps, typed data layers, authentication, payments, role-based dashboards, AI features with validation, and deployment-oriented documentation."
+      "I build more than interfaces: I connect product requirements, backend rules, databases, integrations, deployment and user experience.",
+      "My strongest work includes a management platform built for Máquina Team, an event-driven orders backend on AWS, an e-commerce and services platform documented as a public case study, an AI study platform and an asynchronous log-ingestion service.",
+      "The pattern is consistent: TypeScript-first applications, typed data layers, authentication, payments, role-based dashboards, automated tests and documentation that explains the trade-offs."
     ],
     pt: [
-      "Helber atua para times que precisam de alguém capaz de construir mais do que interfaces: ele conecta requisitos de produto, regras de backend, bancos de dados, integrações, deploy e experiência do usuário.",
-      "A evidência mais forte do portfólio não é uma lista de tutoriais. Ela inclui uma plataforma privada de e-commerce/serviços documentada em estudo de arquitetura, um sistema real para academia, tutor com IA, estúdio de transcrição, app de produtividade e microserviço de observabilidade.",
-      "O padrão técnico é consistente: aplicações TypeScript, camadas de dados tipadas, autenticação, pagamentos, dashboards por perfil, recursos de IA com validação e documentação orientada a deploy."
+      "Construo mais do que interfaces: conecto requisitos de produto, regras de backend, bancos de dados, integrações, deploy e experiência do usuário.",
+      "Meus trabalhos mais fortes incluem uma plataforma de gestão feita para a Máquina Team, um backend de pedidos orientado a eventos na AWS, uma plataforma de e-commerce e serviços documentada em estudo de caso público, uma plataforma de estudos com IA e um serviço assíncrono de ingestão de logs.",
+      "O padrão é consistente: aplicações TypeScript, camadas de dados tipadas, autenticação, pagamentos, painéis por perfil, testes automatizados e documentação que explica os trade-offs."
     ]
   },
   evidence: {
     en: [
+      { value: "AWS", label: "Lambda, DynamoDB Streams, SQS and EventBridge in an event-driven backend" },
       { value: "40+", label: "REST endpoints in the e-commerce platform" },
-      { value: "300h+", label: "AI specialization through FGV and Brazilian Navy" },
-      { value: "Client", label: "Real product delivered for Máquina Team" },
-      { value: "AI", label: "Gemini, OpenAI, Whisper, Ollama, YOLOv10 and PyTorch" }
+      { value: "Real use", label: "Management platform built for Máquina Team" },
+      { value: "300h+", label: "AI specialization through FGV and Brazilian Navy" }
     ],
     pt: [
+      { value: "AWS", label: "Lambda, DynamoDB Streams, SQS e EventBridge em backend orientado a eventos" },
       { value: "40+", label: "endpoints REST na plataforma de e-commerce" },
-      { value: "300h+", label: "especialização em IA pela FGV e Marinha" },
-      { value: "Cliente", label: "produto real entregue para Máquina Team" },
-      { value: "IA", label: "Gemini, OpenAI, Whisper, Ollama, YOLOv10 e PyTorch" }
+      { value: "Uso real", label: "plataforma de gestão feita para a Máquina Team" },
+      { value: "300h+", label: "especialização em IA pela FGV e Marinha" }
     ]
   },
   stackGroups: {
     en: [
-      { title: "Frontend", items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui"] },
+      { title: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS"] },
       { title: "Backend", items: ["Node.js", "Express", "FastAPI", "REST APIs", "Auth.js / NextAuth"] },
-      { title: "Data", items: ["PostgreSQL", "Prisma", "Drizzle", "Firebase", "Redis"] },
-      { title: "AI / ML", items: ["Gemini", "OpenAI", "Whisper", "Ollama", "YOLOv10", "PyTorch", "scikit-learn"] },
-      { title: "Infra & Quality", items: ["Docker", "Vercel", "Cloudflare R2", "GitHub Actions", "Vitest", "Playwright", "pytest"] }
+      { title: "Data", items: ["PostgreSQL", "Prisma", "Drizzle", "Redis", "DynamoDB"] },
+      { title: "AWS", items: ["Lambda", "API Gateway", "SQS", "EventBridge", "SNS", "AWS SAM"] },
+      { title: "Quality & Delivery", items: ["Vitest", "Playwright", "pytest", "Docker", "Vercel", "GitHub Actions"] },
+      { title: "AI", items: ["Gemini", "OpenAI", "PyTorch", "scikit-learn"] }
     ],
     pt: [
-      { title: "Frontend", items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui"] },
+      { title: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS"] },
       { title: "Backend", items: ["Node.js", "Express", "FastAPI", "APIs REST", "Auth.js / NextAuth"] },
-      { title: "Dados", items: ["PostgreSQL", "Prisma", "Drizzle", "Firebase", "Redis"] },
-      { title: "IA / ML", items: ["Gemini", "OpenAI", "Whisper", "Ollama", "YOLOv10", "PyTorch", "scikit-learn"] },
-      { title: "Infra e Qualidade", items: ["Docker", "Vercel", "Cloudflare R2", "GitHub Actions", "Vitest", "Playwright", "pytest"] }
+      { title: "Dados", items: ["PostgreSQL", "Prisma", "Drizzle", "Redis", "DynamoDB"] },
+      { title: "AWS", items: ["Lambda", "API Gateway", "SQS", "EventBridge", "SNS", "AWS SAM"] },
+      { title: "Qualidade e Entrega", items: ["Vitest", "Playwright", "pytest", "Docker", "Vercel", "GitHub Actions"] },
+      { title: "IA", items: ["Gemini", "OpenAI", "PyTorch", "scikit-learn"] }
     ]
   },
   background: {
     en: [
-      "Before focusing on software, Helber served as a Brazilian Navy Marine Corps officer. That background matters because it shows discipline, responsibility, leadership and calm execution under pressure.",
-      "In software, he applies that same operating rhythm to product delivery: understand the mission, break down the problem, document decisions, validate with tests and ship usable systems."
+      "I am an officer in the Brazilian Marine Corps. Military service taught me discipline, responsibility, leadership and calm execution under pressure.",
+      "In software I apply the same rhythm: understand the mission, break down the problem, document decisions, validate with tests and ship usable systems."
     ],
     pt: [
-      "Antes de focar em software, Helber atuou como Oficial Fuzileiro Naval da Marinha do Brasil. Essa trajetória importa porque demonstra disciplina, responsabilidade, liderança e execução sob pressão.",
-      "No desenvolvimento, ele aplica esse mesmo ritmo operacional: entender a missão, decompor o problema, documentar decisões, validar com testes e entregar sistemas usáveis."
+      "Sou oficial do Corpo de Fuzileiros Navais da Marinha do Brasil. A carreira militar me ensinou disciplina, responsabilidade, liderança e execução sob pressão.",
+      "No software aplico o mesmo ritmo: entender a missão, decompor o problema, documentar decisões, validar com testes e entregar sistemas usáveis."
     ]
   },
   education: {
     en: [
-      "FGV - Postgraduate Specialization in Artificial Intelligence, January 2024 to April 2025.",
-      "Final project: YOLOv10-powered computer vision system for military vehicle detection and classification with CNN/PyTorch foundations.",
-      "Escola Naval - Naval Sciences / Engineering, January 2014 to December 2019."
+      "FGV, Postgraduate Specialization in Artificial Intelligence, January 2024 to April 2025.",
+      "Final project: YOLOv10-based computer vision system for military vehicle detection and classification.",
+      "Brazilian Naval Academy (Escola Naval), Bachelor's degree in Naval Science (Mechanical Engineering track), January 2014 to December 2019."
     ],
     pt: [
-      "FGV - Pós-graduação Lato Sensu em Inteligência Artificial, janeiro de 2024 a abril de 2025.",
-      "Projeto final: sistema de visão computacional com YOLOv10 para detecção e classificação de veículos militares, com base em CNN/PyTorch.",
-      "Escola Naval - Ciências Navais / Engenharia, janeiro de 2014 a dezembro de 2019."
+      "FGV, Pós-graduação Lato Sensu em Inteligência Artificial, janeiro de 2024 a abril de 2025.",
+      "Projeto final: sistema de visão computacional com YOLOv10 para detecção e classificação de veículos militares.",
+      "Escola Naval, Bacharelado em Ciências Navais (habilitação em Mecânica), janeiro de 2014 a dezembro de 2019."
     ]
   },
   certifications: {
     en: [
-      "React Developer - DIO.",
-      "CS50x Introduction to Computer Science - Harvard University.",
-      "Mercado Pago checkout and billing implementation credential."
+      "CS50x Introduction to Computer Science, Harvard University.",
+      "React Developer and JavaScript Developer, DIO.",
+      "Mercado Pago Checkout Pro developer credential."
     ],
     pt: [
-      "React Developer - DIO.",
-      "CS50x Introduction to Computer Science - Harvard University.",
-      "Credencial de implementação de checkout e cobrança Mercado Pago."
+      "CS50x Introduction to Computer Science, Harvard University.",
+      "React Developer e JavaScript Developer, DIO.",
+      "Credencial de desenvolvedor Mercado Pago Checkout Pro."
     ]
   },
   languages: {
-    en: ["English: advanced/fluent", "Spanish: intermediate", "French: beginner"],
-    pt: ["Inglês: avançado/fluente", "Espanhol: intermediário", "Francês: iniciante"]
+    en: ["Portuguese: native", "English: advanced", "Spanish: intermediate", "French: beginner"],
+    pt: ["Português: nativo", "Inglês: avançado", "Espanhol: intermediário", "Francês: iniciante"]
   },
   services: {
     en: ["Web development", "Application development", "AI automation", "Full-stack MVPs"],
@@ -289,13 +299,13 @@ export const profile: Profile = {
   },
   resume: {
     en: {
-      title: "ATS Resume",
-      subtitle: "Plain, recruiter-friendly resume for screening systems and human review.",
+      title: "Resume",
+      subtitle: "Plain-text version for quick reading.",
       sections: englishResumeSections
     },
     pt: {
-      title: "Currículo ATS",
-      subtitle: "Currículo limpo para sistemas de triagem e leitura humana.",
+      title: "Currículo",
+      subtitle: "Versão em texto simples para leitura rápida.",
       sections: portugueseResumeSections
     }
   }

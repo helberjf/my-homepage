@@ -33,7 +33,7 @@ export function HomePage() {
             </IconLink>
           </div>
         </div>
-        <aside className="hero-panel" aria-label="Recruiter signals">
+        <aside className="hero-panel" aria-label="Highlights">
           {profile.evidence[language].map((item) => (
             <div className="signal" key={item.label}>
               <strong>{item.value}</strong>

@@ -19,6 +19,32 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    name: "AWS Serverless Orders",
+    featured: true,
+    stack: ["TypeScript", "AWS Lambda", "API Gateway", "DynamoDB Streams", "SQS", "EventBridge", "SNS", "AWS SAM"],
+    links: [{ type: "repo", href: "https://github.com/helberjf/aws-serverless-orders" }],
+    summary: {
+      en: "An event-driven orders backend that keeps a database change and its downstream events consistent when requests are retried, messages arrive twice or a publisher fails halfway.",
+      pt: "Backend de pedidos orientado a eventos que mantém consistentes a mudança no banco e os eventos seguintes quando requisições são repetidas, mensagens chegam duplicadas ou o publicador falha no meio."
+    },
+    problem: {
+      en: "Saving an order and publishing an event are two separate operations; if one fails, downstream services either miss the order or hear about one that does not exist.",
+      pt: "Salvar um pedido e publicar um evento são operações separadas; se uma falha, os serviços seguintes perdem o pedido ou recebem um pedido que não existe."
+    },
+    architecture: {
+      en: "API Gateway with Cognito scopes invokes Lambda handlers. One DynamoDB transaction writes the order, the idempotent response and an outbox record; a stream-triggered publisher and a scheduled reconciler deliver events to SQS, EventBridge and SNS.",
+      pt: "API Gateway com escopos Cognito chama handlers Lambda. Uma transação DynamoDB grava o pedido, a resposta idempotente e um registro de outbox; um publicador acionado por stream e um reconciliador agendado entregam os eventos para SQS, EventBridge e SNS."
+    },
+    highlights: {
+      en: ["Transactional outbox with leased, retry-bounded publication.", "Owner-scoped idempotency keys and conditional consumer transactions.", "Separate IAM role per function, DLQs and structured telemetry.", "Unit, DynamoDB Local integration and infrastructure tests (137 passing locally)."],
+      pt: ["Transactional outbox com publicação por lease e limite de retentativas.", "Chaves de idempotência por usuário e transações condicionais nos consumidores.", "Role IAM separada por função, DLQs e telemetria estruturada.", "Testes unitários, de integração com DynamoDB Local e de infraestrutura (137 passando localmente)."]
+    },
+    talkingPoints: {
+      en: ["Explain why a transactional outbox instead of writing and then publishing.", "Discuss at-least-once delivery and how each consumer stays idempotent.", "Walk through the recovery path when the stream publisher fails."],
+      pt: ["Explicar por que usar transactional outbox em vez de gravar e depois publicar.", "Discutir entrega at-least-once e como cada consumidor continua idempotente.", "Percorrer o caminho de recuperação quando o publicador do stream falha."]
+    }
+  },
+  {
     name: "E-commerce & Services Platform",
     featured: true,
     stack: ["Next.js 16", "React 19", "TypeScript", "Prisma 7", "PostgreSQL", "MercadoPago", "Gemini AI", "Cloudflare R2"],
@@ -27,8 +53,8 @@ export const projects: Project[] = [
       { type: "caseStudy", href: "https://github.com/helberjf/ecommerce-platform-casestudy" }
     ],
     summary: {
-      en: "A production-ready commerce and scheduling platform that combines physical products, bookable services, payments, CRM, dashboards and AI-assisted workflows.",
-      pt: "Uma plataforma de e-commerce e agendamentos pronta para produção, combinando produtos físicos, serviços agendáveis, pagamentos, CRM, dashboards e fluxos com IA."
+      en: "A commerce and scheduling platform that combines physical products, bookable services, payments, CRM, dashboards and AI-assisted workflows.",
+      pt: "Uma plataforma de e-commerce e agendamentos que combina produtos físicos, serviços agendáveis, pagamentos, CRM, dashboards e fluxos com IA."
     },
     problem: {
       en: "Small businesses often need products, services, customer management, payments and analytics in one place instead of disconnected tools.",
@@ -56,24 +82,24 @@ export const projects: Project[] = [
       { type: "caseStudy", href: "https://github.com/helberjf/gym-management-casestudy" }
     ],
     summary: {
-      en: "A full-stack platform delivered for a real fight-club client, covering marketing, store, subscriptions, CRM, messaging, training modules and owner dashboards.",
-      pt: "Plataforma full stack entregue para cliente real de academia de luta, cobrindo site, loja, assinaturas, CRM, mensageria, módulos de treino e dashboards do proprietário."
+      en: "A full-stack platform built for a fight club, covering marketing, store, subscriptions, CRM, messaging, training modules and owner dashboards.",
+      pt: "Plataforma full stack feita para uma academia de luta, cobrindo site, loja, assinaturas, CRM, mensageria, módulos de treino e dashboards do proprietário."
     },
     problem: {
-      en: "The client needed more than a website: they needed operations, member engagement and financial visibility in one system.",
-      pt: "O cliente precisava de mais do que um site: precisava de operação, engajamento de alunos e visibilidade financeira em um sistema."
+      en: "The gym needed more than a website: it needed operations, member engagement and financial visibility in one system.",
+      pt: "A academia precisava de mais do que um site: precisava de operação, engajamento de alunos e visibilidade financeira em um sistema."
     },
     architecture: {
       en: "Next.js application with public marketing pages, member area, staff/owner dashboards, PostgreSQL/Prisma, Redis caching/session support, Cloudflare R2, WhatsApp messaging and Web Push notifications.",
       pt: "Aplicação Next.js com páginas públicas, área do aluno, dashboards de equipe/proprietário, PostgreSQL/Prisma, Redis para cache/sessões, Cloudflare R2, WhatsApp e Web Push."
     },
     highlights: {
-      en: ["Real paying client context with reliability expectations.", "Financial reports including DRE-style business visibility.", "Member, staff and owner role separation.", "Vitest and Playwright coverage for important flows."],
-      pt: ["Contexto de cliente pagante real com expectativa de confiabilidade.", "Relatórios financeiros incluindo visão tipo DRE.", "Separação de perfis aluno, equipe e proprietário.", "Cobertura com Vitest e Playwright em fluxos importantes."]
+      en: ["Used by a real business, so reliability mattered.", "Financial reports including DRE-style business visibility.", "Member, staff and owner role separation.", "Vitest and Playwright coverage for important flows."],
+      pt: ["Usado por um negócio real, então confiabilidade importava.", "Relatórios financeiros incluindo visão tipo DRE.", "Separação de perfis aluno, equipe e proprietário.", "Cobertura com Vitest e Playwright em fluxos importantes."]
     },
     talkingPoints: {
-      en: ["Describe how technical decisions changed because this was a real client product.", "Explain role-based dashboards and why owners need different data than members.", "Discuss the trade-off between fast delivery and test coverage in client work."],
-      pt: ["Descrever como as decisões técnicas mudaram por ser produto de cliente real.", "Explicar dashboards por perfil e por que proprietários precisam de dados diferentes dos alunos.", "Discutir o equilíbrio entre entrega rápida e cobertura de testes em projeto de cliente."]
+      en: ["Describe how technical decisions changed because a real business depends on it.", "Explain role-based dashboards and why owners need different data than members.", "Discuss the trade-off between fast delivery and test coverage."],
+      pt: ["Descrever como as decisões técnicas mudaram porque um negócio real depende dele.", "Explicar dashboards por perfil e por que proprietários precisam de dados diferentes dos alunos.", "Discutir o equilíbrio entre entrega rápida e cobertura de testes."]
     }
   },
   {
@@ -103,32 +129,6 @@ export const projects: Project[] = [
     talkingPoints: {
       en: ["Discuss why AI-generated content must be validated before saving.", "Explain the local backend plus public frontend trade-off.", "Show how product scope grew from English tutoring into a broader learning system."],
       pt: ["Discutir por que conteúdo gerado por IA precisa ser validado antes de salvar.", "Explicar o trade-off de backend local com frontend público.", "Mostrar como o escopo cresceu de tutor de inglês para sistema de aprendizagem mais amplo."]
-    }
-  },
-  {
-    name: "AI Media Transcription & Report Studio",
-    featured: false,
-    stack: ["Next.js", "FastAPI", "Electron", "OpenAI", "Gemini", "Whisper", "Stripe", "PostgreSQL"],
-    links: [{ type: "repo", href: "https://github.com/helberjf/video-transcript" }],
-    summary: {
-      en: "A SaaS and Windows desktop app for turning audio/video into transcripts, structured reports and DOCX/PDF exports.",
-      pt: "SaaS e app desktop Windows para transformar áudio/vídeo em transcrições, relatórios estruturados e exportações DOCX/PDF."
-    },
-    problem: {
-      en: "Users need reliable transcription and report generation across providers, formats and deployment modes.",
-      pt: "Usuários precisam de transcrição e geração de relatórios confiáveis entre provedores, formatos e modos de uso."
-    },
-    architecture: {
-      en: "Monorepo with Next.js SaaS frontend, FastAPI backend for transcription/media/OCR/export, and Electron packaging for local Windows workflows.",
-      pt: "Monorepo com frontend SaaS Next.js, backend FastAPI para transcrição/mídia/OCR/exportação e empacotamento Electron para uso local no Windows."
-    },
-    highlights: {
-      en: ["Multi-provider transcription chain with local Whisper fallback.", "DOCX/PDF report generation and reusable templates.", "Auth, billing with Stripe and transactional email.", "Electron desktop distribution alongside the web product."],
-      pt: ["Cadeia de transcrição multi-provider com fallback Whisper local.", "Geração de relatórios DOCX/PDF e templates reutilizáveis.", "Autenticação, cobrança com Stripe e email transacional.", "Distribuição desktop Electron junto ao produto web."]
-    },
-    talkingPoints: {
-      en: ["Explain provider fallback strategy and why local Whisper matters.", "Discuss differences between SaaS and desktop packaging.", "Walk through how media processing, OCR and exports fit together."],
-      pt: ["Explicar estratégia de fallback entre provedores e por que Whisper local importa.", "Discutir diferenças entre SaaS e empacotamento desktop.", "Mostrar como processamento de mídia, OCR e exportações se conectam."]
     }
   },
   {
@@ -166,8 +166,8 @@ export const projects: Project[] = [
     stack: ["Express 5", "BullMQ", "Redis", "PostgreSQL", "Zod", "Pino", "Prometheus", "Docker"],
     links: [{ type: "repo", href: "https://github.com/helberjf/logs-microservices" }],
     summary: {
-      en: "A structured-log ingestion pipeline with REST API, async worker, PostgreSQL persistence, search, stats, Prometheus metrics, OpenAPI and CI.",
-      pt: "Pipeline de ingestão de logs estruturados com API REST, worker assíncrono, persistência PostgreSQL, busca, estatísticas, métricas Prometheus, OpenAPI e CI."
+      en: "A structured-log ingestion pipeline with REST API, async worker, PostgreSQL persistence, search, stats, Prometheus metrics, OpenAPI and Docker.",
+      pt: "Pipeline de ingestão de logs estruturados com API REST, worker assíncrono, persistência PostgreSQL, busca, estatísticas, métricas Prometheus, OpenAPI e Docker."
     },
     problem: {
       en: "Log ingestion should respond quickly, validate contracts and process writes reliably without coupling client latency to database persistence.",
@@ -178,8 +178,8 @@ export const projects: Project[] = [
       pt: "Express valida requisições com Zod, registra jobs no PostgreSQL, enfileira BullMQ no Redis e um worker persiste logs com retry/backoff e dead letters."
     },
     highlights: {
-      en: ["202 Accepted ingestion with async processing.", "Idempotency through dedupeKey.", "Keyset pagination, JSONB filters and simple full-text search.", "Prometheus metrics, health checks, Docker Compose and CI."],
-      pt: ["Ingestão 202 Accepted com processamento assíncrono.", "Idempotência via dedupeKey.", "Paginação keyset, filtros JSONB e busca textual simples.", "Métricas Prometheus, health checks, Docker Compose e CI."]
+      en: ["202 Accepted ingestion with async processing.", "Idempotency through dedupeKey.", "Keyset pagination, JSONB filters and simple full-text search.", "Prometheus metrics, health checks, Docker Compose and automated tests."],
+      pt: ["Ingestão 202 Accepted com processamento assíncrono.", "Idempotência via dedupeKey.", "Paginação keyset, filtros JSONB e busca textual simples.", "Métricas Prometheus, health checks, Docker Compose e testes automatizados."]
     },
     talkingPoints: {
       en: ["Explain the queue/worker pattern and why it protects API latency.", "Discuss idempotency and dead-letter handling.", "Walk through database indexes and search trade-offs."],
