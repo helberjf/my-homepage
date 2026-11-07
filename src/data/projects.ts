@@ -94,12 +94,12 @@ export const projects: Project[] = [
       pt: "Aplicação Next.js com páginas públicas, área do aluno, dashboards de equipe/proprietário, PostgreSQL/Prisma, Redis para cache/sessões, Cloudflare R2, WhatsApp e Web Push."
     },
     highlights: {
-      en: ["Used by a real business, so reliability mattered.", "Financial reports including DRE-style business visibility.", "Member, staff and owner role separation.", "Vitest and Playwright coverage for important flows."],
-      pt: ["Usado por um negócio real, então confiabilidade importava.", "Relatórios financeiros incluindo visão tipo DRE.", "Separação de perfis aluno, equipe e proprietário.", "Cobertura com Vitest e Playwright em fluxos importantes."]
+      en: ["Modeled on a real fight club's workflows, with a live demo.", "Financial reports including DRE-style business visibility.", "Member, staff and owner role separation.", "Vitest and Playwright coverage for important flows."],
+      pt: ["Modelado a partir da rotina real de uma academia de luta, com demo no ar.", "Relatórios financeiros incluindo visão tipo DRE.", "Separação de perfis aluno, equipe e proprietário.", "Cobertura com Vitest e Playwright em fluxos importantes."]
     },
     talkingPoints: {
-      en: ["Describe how technical decisions changed because a real business depends on it.", "Explain role-based dashboards and why owners need different data than members.", "Discuss the trade-off between fast delivery and test coverage."],
-      pt: ["Descrever como as decisões técnicas mudaram porque um negócio real depende dele.", "Explicar dashboards por perfil e por que proprietários precisam de dados diferentes dos alunos.", "Discutir o equilíbrio entre entrega rápida e cobertura de testes."]
+      en: ["Describe how the gym's real workflows shaped the data model.", "Explain role-based dashboards and why owners need different data than members.", "Discuss the trade-off between fast delivery and test coverage."],
+      pt: ["Descrever como a rotina real da academia moldou o modelo de dados.", "Explicar dashboards por perfil e por que proprietários precisam de dados diferentes dos alunos.", "Discutir o equilíbrio entre entrega rápida e cobertura de testes."]
     }
   },
   {

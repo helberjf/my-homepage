@@ -187,12 +187,12 @@ export const profile: Profile = {
   },
   hero: {
     en: {
-      role: "Full Stack Developer | TypeScript, React, Node.js & Next.js | AWS Serverless & PostgreSQL",
+      role: "Full Stack Developer | TypeScript, React, Node.js & Next.js | AWS & PostgreSQL",
       summary:
         "I build full stack web applications with TypeScript, React, Next.js and Node.js, from the database schema to the deployed app, including event-driven backends on AWS and practical AI features."
     },
     pt: {
-      role: "Desenvolvedor Full Stack | TypeScript, React, Node.js e Next.js | AWS Serverless e PostgreSQL",
+      role: "Desenvolvedor Full Stack | TypeScript, React, Node.js e Next.js | AWS e PostgreSQL",
       summary:
         "Desenvolvo aplicações web full stack com TypeScript, React, Next.js e Node.js, do modelo de dados ao deploy, incluindo backends orientados a eventos na AWS e recursos práticos de IA."
     }
@@ -227,13 +227,13 @@ export const profile: Profile = {
     en: [
       { value: "AWS", label: "Lambda, DynamoDB Streams, SQS and EventBridge in an event-driven backend" },
       { value: "40+", label: "REST endpoints in the e-commerce platform" },
-      { value: "Real use", label: "Management platform built for Máquina Team" },
+      { value: "Live demo", label: "Management platform built for Máquina Team" },
       { value: "300h+", label: "AI specialization through FGV and Brazilian Navy" }
     ],
     pt: [
       { value: "AWS", label: "Lambda, DynamoDB Streams, SQS e EventBridge em backend orientado a eventos" },
       { value: "40+", label: "endpoints REST na plataforma de e-commerce" },
-      { value: "Uso real", label: "plataforma de gestão feita para a Máquina Team" },
+      { value: "Demo no ar", label: "plataforma de gestão feita para a Máquina Team" },
       { value: "300h+", label: "especialização em IA pela FGV e Marinha" }
     ]
   },
