@@ -55,7 +55,7 @@ const englishResumeSections: ResumeSection[] = [
     title: "Professional Summary",
     items: [
       "Full Stack Developer building web applications with TypeScript, React, Next.js, Node.js and Python/FastAPI, from data modeling to deployment.",
-      "Builds event-driven backends on AWS (Lambda, API Gateway, DynamoDB Streams, SQS, EventBridge, AWS SAM) and practical AI/LLM features.",
+      "Builds event-driven backends on AWS (Lambda, API Gateway, DynamoDB, SQS, EventBridge, ECS/Fargate, AWS SAM) and practical AI/LLM features; preparing for the AWS Certified Developer – Associate (DVA-C02).",
       "Brazilian Navy officer with leadership experience in high-pressure operations, bringing ownership, discipline and clear communication to software delivery."
     ]
   },
@@ -65,7 +65,7 @@ const englishResumeSections: ResumeSection[] = [
       "Frontend: React, Next.js, TypeScript, Tailwind CSS, responsive and accessible UI.",
       "Backend: Node.js, Express, FastAPI, REST APIs, authentication and RBAC.",
       "Data: PostgreSQL, Prisma, Drizzle, Redis, DynamoDB.",
-      "Cloud and delivery: AWS Lambda, API Gateway, SQS, EventBridge, AWS SAM, Docker, Vercel, GitHub Actions.",
+      "Cloud and delivery: AWS Lambda, API Gateway, DynamoDB, SQS, SNS, EventBridge, ECS/Fargate, S3, IAM, CloudWatch, AWS SAM, CloudFormation, Docker, Vercel, GitHub Actions.",
       "Testing: Vitest, Playwright, pytest.",
       "AI: Gemini and OpenAI integrations, PyTorch, scikit-learn."
     ]
@@ -73,7 +73,7 @@ const englishResumeSections: ResumeSection[] = [
   {
     title: "Experience",
     items: [
-      "Full Stack Developer, Independent projects, 2025 to present.",
+      "Full Stack Developer, Independent projects, October 2025 to present.",
       "Máquina Team (fight club): website with Mercado Pago checkout, then a management platform with memberships, store, CRM, WhatsApp and Web Push messaging and role-based dashboards (Next.js, Prisma, PostgreSQL, Redis).",
       "Mapa Hóspede: lead developer of a platform where accommodation hosts publish digital guest guides (React, TypeScript, Express, PostgreSQL/Drizzle, Stripe).",
       "Norwell Brasil and DPI Planning Center: multilingual and quote-request websites built with React and TypeScript, with SEO, accessibility checks and Playwright tests.",
@@ -86,6 +86,7 @@ const englishResumeSections: ResumeSection[] = [
     title: "Selected Projects",
     items: [
       "AWS Serverless Orders: event-driven TypeScript backend with Lambda, API Gateway, Cognito, DynamoDB Streams, SQS, EventBridge and SNS; transactional outbox, idempotent consumers, DLQs, AWS SAM and 137 automated tests.",
+      "AWS Warehouse Intake: multi-warehouse receiving on ECS/Fargate, DynamoDB and SQS without Lambda; durable outbox, idempotent stock updates, dead-letter queue, CloudFormation and load tests.",
       "E-commerce & Services Platform: Next.js 16, React 19, TypeScript, Prisma 7, PostgreSQL, 40+ REST endpoints, MercadoPago/Pix, HMAC-verified webhooks, RBAC and a Gemini assistant.",
       "Logs Microservice: Express 5, BullMQ/Redis worker, PostgreSQL, ingestion deduplication, dead-letter tracking, Prometheus metrics, OpenAPI and Docker.",
       "AI Tutor: Next.js + FastAPI study platform with AI-generated lessons, spaced repetition, authentication and Playwright end-to-end tests."
@@ -103,7 +104,8 @@ const englishResumeSections: ResumeSection[] = [
     items: [
       "CS50x Introduction to Computer Science, Harvard University, November 2025.",
       "React Developer (May 2023) and JavaScript Developer (October 2025), DIO.",
-      "Mercado Pago Checkout Pro developer credential, November 2025."
+      "Mercado Pago Checkout Pro developer credential, November 2025.",
+      "AWS Certified Developer – Associate (DVA-C02): in preparation."
     ]
   },
   {
@@ -117,7 +119,7 @@ const portugueseResumeSections: ResumeSection[] = [
     title: "Resumo Profissional",
     items: [
       "Desenvolvedor Full Stack que constrói aplicações web com TypeScript, React, Next.js, Node.js e Python/FastAPI, da modelagem de dados ao deploy.",
-      "Desenvolve backends orientados a eventos na AWS (Lambda, API Gateway, DynamoDB Streams, SQS, EventBridge, AWS SAM) e recursos práticos de IA/LLMs.",
+      "Desenvolve backends orientados a eventos na AWS (Lambda, API Gateway, DynamoDB, SQS, EventBridge, ECS/Fargate, AWS SAM) e recursos práticos de IA/LLMs; em preparação para a AWS Certified Developer – Associate (DVA-C02).",
       "Oficial da Marinha do Brasil, com experiência de liderança em operações sob pressão, trazendo responsabilidade, disciplina e comunicação clara para a entrega de software."
     ]
   },
@@ -127,7 +129,7 @@ const portugueseResumeSections: ResumeSection[] = [
       "Frontend: React, Next.js, TypeScript, Tailwind CSS, interfaces responsivas e acessíveis.",
       "Backend: Node.js, Express, FastAPI, APIs REST, autenticação e RBAC.",
       "Dados: PostgreSQL, Prisma, Drizzle, Redis, DynamoDB.",
-      "Cloud e entrega: AWS Lambda, API Gateway, SQS, EventBridge, AWS SAM, Docker, Vercel, GitHub Actions.",
+      "Cloud e entrega: AWS Lambda, API Gateway, DynamoDB, SQS, SNS, EventBridge, ECS/Fargate, S3, IAM, CloudWatch, AWS SAM, CloudFormation, Docker, Vercel, GitHub Actions.",
       "Testes: Vitest, Playwright, pytest.",
       "IA: integrações com Gemini e OpenAI, PyTorch, scikit-learn."
     ]
@@ -135,7 +137,7 @@ const portugueseResumeSections: ResumeSection[] = [
   {
     title: "Experiência",
     items: [
-      "Desenvolvedor Full Stack, Projetos independentes, 2025 até o momento.",
+      "Desenvolvedor Full Stack, Projetos independentes, outubro de 2025 até o momento.",
       "Máquina Team (academia de luta): site com checkout Mercado Pago e, depois, plataforma de gestão com planos, loja, CRM, mensagens por WhatsApp e Web Push e painéis por perfil (Next.js, Prisma, PostgreSQL, Redis).",
       "Mapa Hóspede: desenvolvedor principal de uma plataforma em que anfitriões publicam guias digitais para hóspedes (React, TypeScript, Express, PostgreSQL/Drizzle, Stripe).",
       "Norwell Brasil e DPI Planning Center: sites multilíngues e de pedido de orçamento com React e TypeScript, SEO, verificações de acessibilidade e testes Playwright.",
@@ -148,6 +150,7 @@ const portugueseResumeSections: ResumeSection[] = [
     title: "Projetos Selecionados",
     items: [
       "AWS Serverless Orders: backend TypeScript orientado a eventos com Lambda, API Gateway, Cognito, DynamoDB Streams, SQS, EventBridge e SNS; transactional outbox, consumidores idempotentes, DLQs, AWS SAM e 137 testes automatizados.",
+      "AWS Warehouse Intake: recebimento em vários armazéns com ECS/Fargate, DynamoDB e SQS, sem Lambda; outbox durável, atualização idempotente de estoque, dead-letter queue, CloudFormation e testes de carga.",
       "E-commerce & Services Platform: Next.js 16, React 19, TypeScript, Prisma 7, PostgreSQL, 40+ endpoints REST, MercadoPago/Pix, webhooks verificados com HMAC, RBAC e assistente Gemini.",
       "Logs Microservice: Express 5, worker BullMQ/Redis, PostgreSQL, deduplicação na ingestão, registro de dead letters, métricas Prometheus, OpenAPI e Docker.",
       "AI Tutor: plataforma de estudos Next.js + FastAPI com aulas geradas por IA, repetição espaçada, autenticação e testes end-to-end com Playwright."
@@ -165,7 +168,8 @@ const portugueseResumeSections: ResumeSection[] = [
     items: [
       "CS50x Introduction to Computer Science, Harvard University, novembro de 2025.",
       "React Developer (maio de 2023) e JavaScript Developer (outubro de 2025), DIO.",
-      "Credencial de desenvolvedor Mercado Pago Checkout Pro, novembro de 2025."
+      "Credencial de desenvolvedor Mercado Pago Checkout Pro, novembro de 2025.",
+      "AWS Certified Developer – Associate (DVA-C02): em preparação."
     ]
   },
   {
@@ -202,36 +206,38 @@ export const profile: Profile = {
       "Postgraduate specialization in Artificial Intelligence at FGV",
       "Brazilian Navy officer with leadership experience under pressure",
       "Management platform built for Máquina Team, a fight club",
-      "Event-driven AWS backend with transactional outbox and idempotent consumers"
+      "Event-driven AWS backends with transactional outbox and idempotent consumers",
+      "Preparing for AWS Certified Developer – Associate (DVA-C02)"
     ],
     pt: [
       "Pós-graduação em Inteligência Artificial pela FGV",
       "Oficial da Marinha do Brasil, com experiência de liderança sob pressão",
       "Plataforma de gestão feita para a Máquina Team, academia de luta",
-      "Backend orientado a eventos na AWS com transactional outbox e consumidores idempotentes"
+      "Backends orientados a eventos na AWS com transactional outbox e consumidores idempotentes",
+      "Em preparação para a AWS Certified Developer – Associate (DVA-C02)"
     ]
   },
   recruiterSummary: {
     en: [
       "I build more than interfaces: I connect product requirements, backend rules, databases, integrations, deployment and user experience.",
-      "My strongest work includes a management platform built for Máquina Team, an event-driven orders backend on AWS, an e-commerce and services platform documented as a public case study, an AI study platform and an asynchronous log-ingestion service.",
+      "My strongest work includes Mapa Hóspede, a platform for accommodation hosts where I am the lead developer; an event-driven orders backend and a multi-warehouse receiving system on AWS; a management platform built for Máquina Team; an e-commerce and services platform documented as a public case study; and an AI study platform.",
       "The pattern is consistent: TypeScript-first applications, typed data layers, authentication, payments, role-based dashboards, automated tests and documentation that explains the trade-offs."
     ],
     pt: [
       "Construo mais do que interfaces: conecto requisitos de produto, regras de backend, bancos de dados, integrações, deploy e experiência do usuário.",
-      "Meus trabalhos mais fortes incluem uma plataforma de gestão feita para a Máquina Team, um backend de pedidos orientado a eventos na AWS, uma plataforma de e-commerce e serviços documentada em estudo de caso público, uma plataforma de estudos com IA e um serviço assíncrono de ingestão de logs.",
+      "Meus trabalhos mais fortes incluem o Mapa Hóspede, plataforma para anfitriões em que sou o desenvolvedor principal; um backend de pedidos orientado a eventos e um sistema de recebimento em vários armazéns na AWS; uma plataforma de gestão feita para a Máquina Team; uma plataforma de e-commerce e serviços documentada em estudo de caso público; e uma plataforma de estudos com IA.",
       "O padrão é consistente: aplicações TypeScript, camadas de dados tipadas, autenticação, pagamentos, painéis por perfil, testes automatizados e documentação que explica os trade-offs."
     ]
   },
   evidence: {
     en: [
-      { value: "AWS", label: "Lambda, DynamoDB Streams, SQS and EventBridge in an event-driven backend" },
+      { value: "AWS", label: "Serverless and ECS/Fargate backends with DynamoDB, SQS and EventBridge" },
       { value: "40+", label: "REST endpoints in the e-commerce platform" },
       { value: "Live demo", label: "Management platform built for Máquina Team" },
       { value: "300h+", label: "AI specialization through FGV and Brazilian Navy" }
     ],
     pt: [
-      { value: "AWS", label: "Lambda, DynamoDB Streams, SQS e EventBridge em backend orientado a eventos" },
+      { value: "AWS", label: "Backends serverless e ECS/Fargate com DynamoDB, SQS e EventBridge" },
       { value: "40+", label: "endpoints REST na plataforma de e-commerce" },
       { value: "Demo no ar", label: "plataforma de gestão feita para a Máquina Team" },
       { value: "300h+", label: "especialização em IA pela FGV e Marinha" }
@@ -242,7 +248,7 @@ export const profile: Profile = {
       { title: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS"] },
       { title: "Backend", items: ["Node.js", "Express", "FastAPI", "REST APIs", "Auth.js / NextAuth"] },
       { title: "Data", items: ["PostgreSQL", "Prisma", "Drizzle", "Redis", "DynamoDB"] },
-      { title: "AWS", items: ["Lambda", "API Gateway", "SQS", "EventBridge", "SNS", "AWS SAM"] },
+      { title: "AWS", items: ["Lambda", "API Gateway", "SQS", "SNS", "EventBridge", "ECS / Fargate", "S3", "IAM", "CloudWatch", "SAM / CloudFormation"] },
       { title: "Quality & Delivery", items: ["Vitest", "Playwright", "pytest", "Docker", "Vercel", "GitHub Actions"] },
       { title: "AI", items: ["Gemini", "OpenAI", "PyTorch", "scikit-learn"] }
     ],
@@ -250,7 +256,7 @@ export const profile: Profile = {
       { title: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS"] },
       { title: "Backend", items: ["Node.js", "Express", "FastAPI", "APIs REST", "Auth.js / NextAuth"] },
       { title: "Dados", items: ["PostgreSQL", "Prisma", "Drizzle", "Redis", "DynamoDB"] },
-      { title: "AWS", items: ["Lambda", "API Gateway", "SQS", "EventBridge", "SNS", "AWS SAM"] },
+      { title: "AWS", items: ["Lambda", "API Gateway", "SQS", "SNS", "EventBridge", "ECS / Fargate", "S3", "IAM", "CloudWatch", "SAM / CloudFormation"] },
       { title: "Qualidade e Entrega", items: ["Vitest", "Playwright", "pytest", "Docker", "Vercel", "GitHub Actions"] },
       { title: "IA", items: ["Gemini", "OpenAI", "PyTorch", "scikit-learn"] }
     ]
@@ -281,12 +287,14 @@ export const profile: Profile = {
     en: [
       "CS50x Introduction to Computer Science, Harvard University.",
       "React Developer and JavaScript Developer, DIO.",
-      "Mercado Pago Checkout Pro developer credential."
+      "Mercado Pago Checkout Pro developer credential.",
+      "AWS Certified Developer – Associate (DVA-C02), in preparation."
     ],
     pt: [
       "CS50x Introduction to Computer Science, Harvard University.",
       "React Developer e JavaScript Developer, DIO.",
-      "Credencial de desenvolvedor Mercado Pago Checkout Pro."
+      "Credencial de desenvolvedor Mercado Pago Checkout Pro.",
+      "AWS Certified Developer – Associate (DVA-C02), em preparação."
     ]
   },
   languages: {

@@ -45,6 +45,58 @@ export const projects: Project[] = [
     }
   },
   {
+    name: "Mapa Hóspede",
+    featured: true,
+    stack: ["React", "TypeScript", "Express", "PostgreSQL", "Drizzle", "Stripe"],
+    links: [{ type: "demo", href: "https://mapahospede.com.br" }],
+    summary: {
+      en: "A platform where accommodation hosts publish digital guest guides shared by link, QR code or invitation. I am the lead developer.",
+      pt: "Plataforma em que anfitriões publicam guias digitais para hóspedes, compartilhados por link, QR code ou convite. Sou o desenvolvedor principal."
+    },
+    problem: {
+      en: "Hosts repeat the same instructions to every guest; a shared, multilingual guide keeps check-in, house rules and local tips in one place.",
+      pt: "Anfitriões repetem as mesmas instruções para cada hóspede; um guia compartilhado e multilíngue reúne check-in, regras da casa e dicas locais."
+    },
+    architecture: {
+      en: "React and TypeScript host dashboard and public guides, an Express API shared by persistent and serverless entry points, PostgreSQL with Drizzle, Stripe subscriptions, media storage and calendar synchronization.",
+      pt: "Painel do anfitrião e guias públicos em React e TypeScript, API Express compartilhada entre execução persistente e serverless, PostgreSQL com Drizzle, assinaturas Stripe, armazenamento de mídia e sincronização de calendário."
+    },
+    highlights: {
+      en: ["Guides shared by link, QR code or individual invitation.", "Multilingual content for international guests.", "Stripe subscriptions and calendar synchronization.", "One Express application across persistent and serverless runtimes."],
+      pt: ["Guias compartilhados por link, QR code ou convite individual.", "Conteúdo multilíngue para hóspedes estrangeiros.", "Assinaturas Stripe e sincronização de calendário.", "Uma aplicação Express rodando em ambiente persistente e serverless."]
+    },
+    talkingPoints: {
+      en: ["Explain how one Express app runs in both persistent and serverless entry points.", "Discuss multilingual content modeling.", "Walk through subscription and access rules for hosts."],
+      pt: ["Explicar como uma aplicação Express roda em ambiente persistente e serverless.", "Discutir a modelagem de conteúdo multilíngue.", "Percorrer as regras de assinatura e acesso dos anfitriões."]
+    }
+  },
+  {
+    name: "AWS Warehouse Intake",
+    featured: true,
+    stack: ["TypeScript", "ECS / Fargate", "DynamoDB", "SQS", "CloudFormation", "Docker", "OpenAPI"],
+    links: [{ type: "repo", href: "https://github.com/helberjf/aws-warehouse-intake" }],
+    summary: {
+      en: "A multi-warehouse receiving application on ECS/Fargate, DynamoDB and SQS, without Lambda: barcode receiving, serialized and bulk stock, and per-warehouse permissions.",
+      pt: "Aplicação de recebimento em vários armazéns com ECS/Fargate, DynamoDB e SQS, sem Lambda: recebimento por código de barras, estoque serializado e a granel e permissões por armazém."
+    },
+    problem: {
+      en: "Receiving stock must not double-count when scanners retry, messages repeat or a worker crashes mid-update.",
+      pt: "O recebimento não pode contar estoque em dobro quando o leitor repete o envio, a mensagem chega duplicada ou o worker cai no meio da atualização."
+    },
+    architecture: {
+      en: "One container image runs three roles on ECS/Fargate behind an HTTPS load balancer: a receiving API that accepts atomically with a durable outbox, a leased outbox publisher, and an inventory worker consuming SQS with conditional DynamoDB transactions and a dead-letter queue.",
+      pt: "Uma imagem de container roda três papéis no ECS/Fargate atrás de um load balancer HTTPS: API de recebimento com aceite atômico e outbox durável, publicador do outbox com lease e worker de estoque consumindo SQS com transações condicionais no DynamoDB e dead-letter queue."
+    },
+    highlights: {
+      en: ["Atomic acceptance and durable publication intent before returning 202.", "Protection against repeated HTTP requests, business references and queue deliveries.", "Serial-number uniqueness across warehouses within one organization.", "CloudFormation deployment, OpenAPI contract, integration and load tests."],
+      pt: ["Aceite atômico e intenção de publicação durável antes de responder 202.", "Proteção contra requisições repetidas, referências de negócio e entregas duplicadas da fila.", "Número de série único entre armazéns da mesma organização.", "Deploy em CloudFormation, contrato OpenAPI, testes de integração e de carga."]
+    },
+    talkingPoints: {
+      en: ["Explain why ECS/Fargate instead of Lambda for this workload.", "Discuss at-least-once SQS delivery and one stock effect per movement.", "Walk through the capacity plan for many warehouses."],
+      pt: ["Explicar por que ECS/Fargate em vez de Lambda neste caso.", "Discutir entrega at-least-once do SQS e um único efeito de estoque por movimento.", "Percorrer o plano de capacidade para muitos armazéns."]
+    }
+  },
+  {
     name: "E-commerce & Services Platform",
     featured: true,
     stack: ["Next.js 16", "React 19", "TypeScript", "Prisma 7", "PostgreSQL", "MercadoPago", "Gemini AI", "Cloudflare R2"],
